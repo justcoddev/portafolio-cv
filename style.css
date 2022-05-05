@@ -106,6 +106,8 @@ p {
   color: var(--hero-text-color);
 }
 
+
+
 /* *****************Menu***************** */
 .menu-btn {
   outline: thin solid var(--first-color);
@@ -169,6 +171,45 @@ p {
     background-color: transparent;
   }
 }
+
+/* *****************Modal***************** */
+.modal {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--black-alpha-color);
+  opacity: 0;
+  pointer-events: none;
+  transition:  all 1s;
+}
+
+.modal-content {
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+.modal-close svg{
+  width: 3rem;
+  height: 3rem;
+  fill: var(--first-color);
+}
+
+.modal[id|="trabajo"]:target{
+  opacity: 1;
+  pointer-events: auto;
+
+}
+
 /* *****************ProgressBar***************** */
 progress {
   width: 100%;
@@ -199,7 +240,7 @@ progress::-moz-progress-bar {
 }
 
 /* *****************Utilities***************** */
-.bg-gray-light{
+.bg-gray-light {
   background-color: var(--gray-light-color);
 }
 .box-shadow-1 {
@@ -222,7 +263,7 @@ progress::-moz-progress-bar {
   max-width: var(--max-width);
 }
 
-.gray-scale{
+.gray-scale {
   filter: grayscale(1);
 }
 
@@ -230,51 +271,47 @@ progress::-moz-progress-bar {
   display: none;
 }
 
-.section{
-  padding:2rem 1rem ;
+.section {
+  padding: 2rem 1rem;
 }
 
-.section-title{
+.section-title {
   border-top: thin solid var(--first-color);
   border-bottom: thin solid var(--first-color);
   margin: 2rem auto;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   width: 250px;
   text-align: center;
   color: var(--title-color);
 }
 
-.text-center{
+.text-center {
   text-align: center;
 }
-.text-left{
+.text-left {
   text-align: left;
 }
-.text-right{
+.text-right {
   text-align: right;
 }
-@media screen and (min-width: 1024px){
-  .full-lg-screen{
+@media screen and (min-width: 1024px) {
+  .full-lg-screen {
     width: 100%;
     min-height: 100vh;
   }
-  .text-lg-center{
-  text-align: center;
+  .text-lg-center {
+    text-align: center;
+  }
+  .text-lg-left {
+    text-align: left;
+  }
+  .text-lg-right {
+    text-align: right;
+  }
 }
-.text-lg-left{
-  text-align: left;
-}
-.text-lg-right{
-  text-align: right;
-}
-}
-
-
-
-
 
 /* *****************Site Styles***************** */
-.about > article{
+.about > article {
   margin-bottom: 2rem;
 }
 .header {
@@ -300,83 +337,81 @@ progress::-moz-progress-bar {
   text-decoration: none;
 }
 
-.portfolio-card{
+.portfolio-card {
   position: relative;
   width: 100%;
   margin: 0 auto;
   display: block;
 }
-.portfolio-card img{
+.portfolio-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.portfolio-card-info{
+.portfolio-card-info {
   position: absolute;
   top: 0;
   left: 0;
-   width: 100%;
+  width: 100%;
   height: 100%;
   padding: 1rem;
   background-color: var(--first-alpha-color);
   color: var(--white-color);
   opacity: 0;
   pointer-events: none;
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
-.portfolio-card:hover .portfolio-card-info{
-opacity: 1;
-pointer-events: auto;
+.portfolio-card:hover .portfolio-card-info {
+  opacity: 1;
+  pointer-events: auto;
 }
 
-.portfolio-card-info > div{
+.portfolio-card-info > div {
   padding: 1rem;
   border: thin solid var(--white-color);
   width: 100%;
   height: 100%;
 }
 
-
-.service-card{
+.service-card {
   margin: 1rem auto;
   padding: 1rem;
   text-align: center;
-  
 }
-.service-card h3{
-color: var(--first-color);
+.service-card h3 {
+  color: var(--first-color);
 }
-.service-card svg{
+.service-card svg {
   margin-bottom: 1.25rem;
   fill: var(--first-color);
 }
 
 @media screen and (min-width: 768px) {
-  .portfolio > .container{
+  .portfolio > .container {
     display: grid;
     grid-template-columns: repeat(2, 50%);
   }
-  .portfolio .section-title{
+  .portfolio .section-title {
     grid-column: span 2;
   }
-  .services > .container{
+  .services > .container {
     display: grid;
     grid-template-columns: repeat(2, 45%);
     justify-content: space-between;
     align-content: center;
   }
 
-  .services .section-title{
+  .services .section-title {
     grid-column: span 2;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .about{
+  .about {
     display: grid;
-    grid-template-columns: repeat(3,30%);
+    grid-template-columns: repeat(3, 30%);
     justify-content: space-between;
     align-content: center;
   }
@@ -386,19 +421,17 @@ color: var(--first-color);
     padding: 0.5rem;
     height: calc(var(--header-height)- 0.5rem);
   }
-   .portfolio > .container{
+  .portfolio > .container {
     grid-template-columns: repeat(3, 1fr);
   }
-  .portfolio .section-title{
+  .portfolio .section-title {
     grid-column: span 3;
   }
-  .services > .container{
-   
+  .services > .container {
     grid-template-columns: repeat(3, 30%);
-    
   }
 
-  .services .section-title{
+  .services .section-title {
     grid-column: span 3;
   }
 }
