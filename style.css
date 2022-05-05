@@ -314,7 +314,18 @@ color: var(--first-color);
 }
 
 @media screen and (min-width: 768px) {
+  .services > .container{
+    display: grid;
+    grid-template-columns: repeat(2, 45%);
+    justify-content: space-between;
+    align-content: center;
+  }
+
+  .services .section-title{
+    grid-column: span 2;
+  }
 }
+
 @media screen and (min-width: 1024px) {
   .about{
     display: grid;
@@ -327,5 +338,14 @@ color: var(--first-color);
     top: 0;
     padding: 0.5rem;
     height: calc(var(--header-height)- 0.5rem);
+  }
+  .services > .container{
+   
+    grid-template-columns: repeat(3, 30%);
+    
+  }
+
+  .services .section-title{
+    grid-column: span 3;
   }
 }
