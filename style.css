@@ -84,6 +84,28 @@ p {
 }
 
 /* *****************Components***************** */
+/* *****************Carousel***************** */
+
+.carousel{
+  margin: 2rem auto;
+  padding: 2rem 0;
+  max-width: 800px;
+  text-align: center;
+  background-color: var(--carousel-bg-color);
+}
+.carousel input{
+  display: none;
+}
+.carousel label{
+  border: medium solid var(--gray-dark-color);
+  border-radius: 50%;
+  margin: 0 o.25rem;
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  cursor: pointer;
+}
+
 /* *****************HeroImage***************** */
 .hero-image {
   background-image: var(--hero-image);
@@ -237,6 +259,13 @@ progress::-moz-progress-bar {
 }
 
 /* *****************Utilities***************** */
+
+.avatar{
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+
 .bg-gray-light {
   background-color: var(--gray-light-color);
 }
@@ -280,6 +309,9 @@ progress::-moz-progress-bar {
   width: 250px;
   text-align: center;
   color: var(--title-color);
+}
+.text-first-color{
+  color: var(--first-color);
 }
 
 .text-center {
